@@ -4,9 +4,9 @@ import LogoStrip from './components/LogoStrip'
 import PainSection from './components/PainSection'
 import ValueProps from './components/ValueProps'
 import FeatureSection from './components/FeatureSection'
-import DeepDive from './components/DeepDive'
 import Testimonials from './components/Testimonials'
 import Pricing from './components/Pricing'
+import Security from './components/Security'
 import FAQ from './components/FAQ'
 import FinalCTA from './components/FinalCTA'
 import Footer from './components/Footer'
@@ -20,21 +20,12 @@ export default function MarketingPage() {
         <LogoStrip />
         <PainSection />
         <ValueProps />
-        <FeatureSection
-          variant="right"
-          title="Feature Section One"
-          description="This is the first feature section that highlights a key capability of the product. It demonstrates how the solution addresses specific needs and provides value to users."
-        />
-        <FeatureSection
-          variant="left"
-          title="Feature Section Two"
-          description="This is the second feature section that showcases another important aspect of the product. It explains additional functionality and benefits that users can expect."
-        />
-        <DeepDive />
+        <FeatureSection />
         <Testimonials />
         <Pricing />
-        <FAQ />
+        <Security />
         <FinalCTA />
+        <FAQ />
       </main>
       <Footer />
     </div>

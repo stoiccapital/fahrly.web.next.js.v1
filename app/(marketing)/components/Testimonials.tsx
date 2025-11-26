@@ -1,57 +1,50 @@
-export default function Testimonials() {
-  const testimonials = [
-    {
-      quote: 'This product has transformed how we work. The impact has been incredible and our team productivity has increased significantly.',
-      name: 'John Doe',
-      role: 'CEO, Company One',
-    },
-    {
-      quote: 'We were struggling with our workflow until we found this solution. It\'s been a game-changer for our entire organization.',
-      name: 'Jane Smith',
-      role: 'CTO, Company Two',
-    },
-    {
-      quote: 'The best investment we\'ve made this year. The ROI has been outstanding and our team loves using it every day.',
-      name: 'Mike Johnson',
-      role: 'Founder, Company Three',
-    },
-    {
-      quote: 'Simple, powerful, and exactly what we needed. This product has exceeded all our expectations.',
-      name: 'Sarah Williams',
-      role: 'VP of Product, Company Four',
-    },
-    {
-      quote: 'We\'ve tried many solutions, but nothing comes close to this. It\'s become essential to our daily operations.',
-      name: 'David Brown',
-      role: 'Director, Company Five',
-    },
-    {
-      quote: 'The support team is amazing and the product just works. Highly recommend to anyone looking for a solution.',
-      name: 'Emily Davis',
-      role: 'Head of Operations, Company Six',
-    },
-  ]
+import { fahrlyCopy } from '../fahrlyCopy'
 
+export default function Testimonials() {
   return (
-    <section>
+    <section id="testimonials" className="scroll-mt-24">
       <div className="mx-auto max-w-6xl px-6 md:px-8 lg:px-12">
         <div className="text-center mb-16">
+          <div className="text-sm text-slate-400 uppercase tracking-wider mb-4">
+            {fahrlyCopy.testimonialsIntro.eyebrow}
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-100 mb-4">
-            What Our Customers Say
+            {fahrlyCopy.testimonialsIntro.title}
           </h2>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
+
+        {/* Google Rating */}
+        <div className="text-center mb-12">
+          <a
+            href="https://share.google/UcqhCmlb2RntZvowk"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-slate-300 hover:text-slate-100"
+          >
+            <span className="text-yellow-400">★★★★★</span>
+            <span className="text-sm">{fahrlyCopy.testimonialsGoogle.ratingText}</span>
+          </a>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {fahrlyCopy.testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="p-6 rounded-xl border border-white/5 bg-slate-900/20"
+              className="p-6 rounded-xl border border-white/5 bg-slate-900/20 relative"
             >
-              <p className="text-slate-300 mb-6 leading-relaxed">
-                "{testimonial.quote}"
+              <div className="absolute top-0 left-0 w-1 h-full bg-slate-100/20 rounded-l-xl" />
+              <p className="text-slate-300 mb-4 leading-relaxed">
+                {testimonial.quote}
               </p>
-              <div>
-                <div className="font-semibold text-slate-100">{testimonial.name}</div>
-                <div className="text-sm text-slate-400">{testimonial.role}</div>
+              <p className="text-sm text-slate-400 mb-6">{testimonial.metric}</p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 text-sm font-semibold">
+                  {testimonial.initials}
+                </div>
+                <div>
+                  <div className="font-semibold text-slate-100 text-sm">{testimonial.name}</div>
+                  <div className="text-xs text-slate-400">{testimonial.role}</div>
+                </div>
               </div>
             </div>
           ))}
