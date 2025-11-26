@@ -1,7 +1,7 @@
 'use client'
 
 interface LogoCarouselProps {
-  companies: string[]
+  companies: readonly string[]
 }
 
 export default function LogoCarousel({ companies }: LogoCarouselProps) {
