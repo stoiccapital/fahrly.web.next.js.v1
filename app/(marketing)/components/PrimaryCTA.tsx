@@ -1,19 +1,20 @@
 'use client'
 
 import Link from 'next/link'
+import Button from '@/app/components/shared/ui/Button'
 
 interface PrimaryCTAProps {
   className?: string
+  fullWidth?: boolean
 }
 
-export function PrimaryCTA({ className = '' }: PrimaryCTAProps) {
+export function PrimaryCTA({ className = '', fullWidth = false }: PrimaryCTAProps) {
   return (
-    <Link
-      href="https://qpp.fahrlygo.de/account/get-signup-link"
-      className={`inline-flex items-center justify-center rounded-lg bg-slate-100 px-4 py-2 text-sm font-medium text-[#050509] hover:bg-slate-200 transition-colors ${className}`}
-    >
-      <span className="md:hidden">Jetzt testen</span>
-      <span className="hidden md:inline">Kostenlos testen</span>
+    <Link href="https://qpp.fahrlygo.de/account/get-signup-link">
+      <Button variant="primary" fullWidth={fullWidth} className={className}>
+        <span className="md:hidden">Jetzt testen</span>
+        <span className="hidden md:inline">Kostenlos testen</span>
+      </Button>
     </Link>
   )
 }

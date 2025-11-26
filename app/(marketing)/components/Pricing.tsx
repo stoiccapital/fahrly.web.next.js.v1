@@ -40,7 +40,7 @@ export default function Pricing() {
                 </li>
               ))}
             </ul>
-            <PrimaryCTA className="w-full" />
+            <PrimaryCTA fullWidth />
             <p className="text-xs text-slate-400 mt-4">
               {fahrlyCopy.pricing.standard.valueNote}
             </p>
@@ -73,7 +73,7 @@ export default function Pricing() {
                 </li>
               ))}
             </ul>
-            <PrimaryCTA className="w-full" />
+            <PrimaryCTA fullWidth />
             <p className="text-xs text-slate-400 mt-4">
               {fahrlyCopy.pricing.team.valueNote}
             </p>
